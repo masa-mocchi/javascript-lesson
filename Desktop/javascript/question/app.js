@@ -130,11 +130,9 @@ remaindar();
 // その理由は、
 // まず、app.jsのグローバルスコープ上でxの値が定義されていないためです。
 
-let x =1;
-console.log(x);
+// let x =1;
+// console.log(x);
 
-// 試しに133行目でlet x =1;と書いてから134行目でconsole.log(x);
-// と書くと、１という値が表示されました。
 // グローバルスコープとは、どこからでも参照できる変数のことです。
 
 // また、Q10においてｘの値が定義されているのは、
@@ -172,3 +170,80 @@ foo();
 
 // スコープは、グローバルスコープとローカルスコープの2種類が存在します。
 // さらに、ローカルスコープは、関数スコープとブロックスコープ{}に分類できます。
+
+// 応用編 問題
+// Q1 標準組み込みオブジェクト
+// 標準組み込みオブジェクト Math を使用し、
+// 0 ~ 9 のランダムな整数をコンソールに出力してください。
+
+// 0から9までのランダムな整数を生成
+let randomNum = Math.floor(Math.random() * 10);
+console.log(randomNum);
+
+// Q2 コールバック関数
+// 関数 setTimeout を使用し、3 秒後に以下のようにコンソールに出力してください。
+
+// Hello World!
+
+function sayHello(){
+  console.log('Hello World!');
+}
+
+setTimeout(sayHello,3000);
+
+// Q3 if (条件分岐)
+// 変数 num に 任意の数値を代入し、
+// 下記条件のもと文字列をコンソールに出し分ける処理を作成してください。
+
+// 条件
+// num が 0 より大きければnum is greater than 0
+// num が 0 より小さければnum is less than 0
+// num が 0 であればnum is 0
+
+let num = 5;
+  if (num > 0){
+  console.log('num is greater than 0');
+}
+  else if (num < 0){
+    console.log('num is less than 0');
+  }
+  else if (num = 0){
+    console.log('num is 0');
+  }
+
+// Q4 for (繰り返し処理)
+// 変数 numbers に空の配列を代入した後、
+// 0 ~ 99 までの数字を変数 numbers に全て追加し、
+// 値が追加された状態の変数 numbers をコンソールに出力してください
+
+let numbers = [];
+
+for (let i = 0; i < 100; i++){
+  numbers = (i);
+  console.log(numbers);
+}
+
+// Q5 for ✕ if
+// 以下の変数 mixed から 要素を一つずつ取り出し、
+// 下記条件のもと文字列をコンソールに出し分ける処理を作成してください。
+
+// 条件
+// Number であり偶数の時は even
+// Number であり奇数の時は odd
+// Number 以外の時は not number
+
+// for (i = 0; i < mixed.length; i++){}
+// mixed.forEach(function(i)){}
+
+let mixed = [4, '2', 5, '8', '9', 0, 1];
+console.log(mixed);
+for (let i = 0; i < mixed.length; i++){
+  if (typeof mixed[i] === 'number'&&  mixed[i] % 2 == 0){
+    console.log('even');
+  }else if ( typeof mixed[i] === 'number'&&  mixed[i] % 2 != 0){
+    console.log('odd');
+  }
+  else{
+    console.log('not number');
+  }
+}
